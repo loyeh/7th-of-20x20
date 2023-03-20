@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #ffffff;
+  background-color: #283d5b;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1,
+p {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+}
+h1 {
+  top: 20px;
+}
+p {
+  top: 70px;
+}
+canvas {
+  background-color: transparent;
+  position: relative;
+  top: 50px;
+  right: 150px;
+}
+.container {
+  position: absolute;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  top: 75%;
+  left: 50%;
+  translate: -50%;
+}
+.letter {
+  width: 1.25em;
+  height: 1.5em;
+  padding: 4px;
+  border-bottom: 2px solid aqua;
+  font-size: 1.5em;
+}
+.wrong {
+  position: absolute;
+  top: 35%;
+  left: 60%;
+  text-align: end;
+  line-height: 1.4em;
+}

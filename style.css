@@ -57,10 +57,13 @@ canvas {
 .wrong {
   position: absolute;
   top: 25%;
-  /* bottom: 200px; */
+  display: none;
   left: 60%;
   text-align: end;
   line-height: 1.4em;
+}
+.wrong.active {
+  display: block;
 }
 .congrats button {
   padding: 1em;
@@ -119,18 +122,20 @@ h3 {
   border-radius: 5px;
   bottom: 0;
   translate: 0 100%;
-  display: none;
-  transition: 1s ease-in-out;
-  animation: popUp 2s ease;
+  visibility: hidden;
 }
 .repeat.active {
-  display: block;
+  visibility: visible;
+  animation: popUp 2s;
 }
 @keyframes popUp {
-  from {
+  0% {
     translate: 0 100%;
   }
-  to {
+  50% {
     translate: 0 0%;
+  }
+  100% {
+    translate: 0 100%;
   }
 }

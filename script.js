@@ -1,6 +1,7 @@
 const words = ["programming", "fundamental", "technical", "medication", "approach", "disaster", "global", "intermediate", "billionaire"];
 const container = document.getElementById("container");
 const wrong = document.getElementById("wrong");
+const wrongParrent = document.getElementById("wrongParrent");
 const gameOver = document.getElementById("gameOver");
 const congrat = document.getElementById("congrats");
 const repeat = document.getElementById("repeat");
@@ -114,8 +115,10 @@ function rightHand() {
 function drawMan(i) {
   switch (i) {
     case 1:
+      wrongParrent.classList.add("active");
       head();
       break;
+
     case 2:
       Body();
       break;
@@ -130,9 +133,8 @@ function drawMan(i) {
       break;
     case 6:
       rightHand();
-      break;
-    case 7:
       lost();
+      break;
   }
 }
 
@@ -146,10 +148,10 @@ wordPlaceHolder(wordArray);
 function hangMan(rightLetters, wrongLetters) {}
 
 function repeated() {
-  repeat.classList.add("active");
+  repeat.className = "repeat active";
   setTimeout(() => {
-    repeat.classList.remove("active");
-  }, 1800);
+    repeat.className = "repeat";
+  }, 2000);
 }
 
 function lost() {
@@ -161,11 +163,13 @@ function win() {
 }
 
 window.addEventListener("keypress", (event) => {
-  const letter = event.key;
-  // console.log(letter);
-  checkLetter(wordArray, letter);
-  wrong.innerText = wrongLetters.toString();
-  if (indexes.length == wordArray.length) {
-    win();
+  if (wrongIndex < 6 && indexes.length < wordArray.length) {
+    const letter = event.key;
+    // console.log(letter);
+    checkLetter(wordArray, letter);
+    wrong.innerText = wrongLetters.toString();
+    if (indexes.length == wordArray.length) {
+      win();
+    }
   }
 });

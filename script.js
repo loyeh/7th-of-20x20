@@ -57,9 +57,9 @@ function checkLetter(wordArray, letter) {
   if (indexes.length == wordArray.length) {
     win();
   }
-  console.log("indexes: ", indexes);
-  console.log("wrongLetters: ", wrongLetters);
-  console.log("rightLetters: ", rightLetters);
+  // console.log("indexes: ", indexes);
+  // console.log("wrongLetters: ", wrongLetters);
+  // console.log("rightLetters: ", rightLetters);
   drawMan(wrongIndex);
 }
 
@@ -134,7 +134,6 @@ function drawMan(i) {
     case 7:
       lost();
   }
-  chooseWord(words);
 }
 
 const word = chooseWord(words);
@@ -144,10 +143,7 @@ let wordLength = word.length;
 hang();
 wordPlaceHolder(wordArray);
 
-function hangMan(rightLetters, wrongLetters) {
-  wrong.innerText = wrongLetters.toString();
-  for (let i = 0; i < rightLetters.length; i++) {}
-}
+function hangMan(rightLetters, wrongLetters) {}
 
 function repeated() {
   repeat.classList.add("active");
@@ -164,13 +160,11 @@ function win() {
   congrat.classList.add("active");
 }
 
-hangMan(rightLetters, wrongLetters, words);
-
 window.addEventListener("keypress", (event) => {
   const letter = event.key;
-  console.log(letter);
+  // console.log(letter);
   checkLetter(wordArray, letter);
-  hangMan(rightLetters, wrongLetters, wordArray);
+  wrong.innerText = wrongLetters.toString();
   if (indexes.length == wordArray.length) {
     win();
   }

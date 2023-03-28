@@ -8,21 +8,34 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
   <title>7th Challenge</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
   <h1>Hangman</h1>
   <p>Find the hidden word - Enter a letter</p>
-  <canvas id="myCanvas" width="900" height="600"></canvas>
-  <div class="container">
-    <div class="letter">a</div>
-    <div class="letter"></div>
-    <div class="letter">a</div>
-    <div class="letter"></div>
-    <div class="letter"></div>
+  <div class="canvas">
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+  </div>
+  <div class="container" id="container">
+
   </div>
   <div class="wrong">Wrong
-    <div>x,y,z,l,m</div>
+    <div id="wrong"></div>
+  </div>
+
+  <div class="congrats " id="congrats">
+    <h3>Congratulations! You won! <i class="fa-solid fa-face-smile"></i></h3>
+    <button onClick="window.location.reload();">Play Again</button>
+  </div>
+  <div class="gameOver " id="gameOver">
+    <h3>OMG! You lost! <i class="fa-solid fa-face-sad-tear"></i></h3>
+    <button onClick="window.location.reload();">Game Over</button>
+  </div>
+  <div class="repeat " id="repeat">
+    You have already entered this letter
   </div>
 </body>
 
